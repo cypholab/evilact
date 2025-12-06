@@ -1,4 +1,4 @@
-# Next.js RCE Scanner
+# evilact
 
 Fast vulnerability scanner for CVE-2025-55182 and CVE-2025-66478 in Next.js applications using React Server Components. Supports bulk scanning, RCE confirmation, and high-performance concurrent checks.
 
