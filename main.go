@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -81,6 +82,9 @@ func NewScanner(cfg *Config) *Scanner {
 			MaxIdleConns:        100,
 			MaxIdleConnsPerHost: 10,
 			IdleConnTimeout:     90 * time.Second,
+			TLSClientConfig: &tls.Config{
+				InsecureSkipVerify: true,
+			},
 		},
 	}
 
@@ -355,7 +359,6 @@ func (s *Scanner) runScanner(ctx context.Context, urls []string) []*ScanResult {
 
 	for range workerCount {
 		wg.Go(func() {
-
 			for url := range urlCh {
 				select {
 				case <-ctx.Done():
