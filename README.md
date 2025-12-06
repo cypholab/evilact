@@ -4,7 +4,7 @@ Fast vulnerability scanner for CVE-2025-55182 and CVE-2025-66478 in Next.js appl
 
 ## Install
 ```bash
-git clone https://github.com/orgs/cypholab/evilact.git
+git clone https://github.com/cypholab/evilact.git
 cd evilact
 go build -o scanner main.go
 ```
